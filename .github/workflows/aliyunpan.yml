@@ -1,10 +1,10 @@
-name: juejin
+name: Ali Yun Pan
 
 on:
   workflow_dispatch:
   schedule:
-    # 上午9点18和下午18点18执行
-    - cron: "18 1,10 * * *"
+    # 上午 10 点 23 执行
+    - cron: "23 2 * * *"
 
 jobs:
   build:
@@ -30,9 +30,9 @@ jobs:
 
       - name: "开始执行"
         run: |
-          node juejin.js
+          node aliyunpan.js
         env:
-          JUEJIN_COOKIE: ${{ secrets.JUEJIN_COOKIE }}
+          ALI_REFRESH_TOKEN: ${{ secrets.ALI_REFRESH_TOKEN }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}

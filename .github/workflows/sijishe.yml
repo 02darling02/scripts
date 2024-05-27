@@ -1,10 +1,9 @@
-name: juejin
+name: sijishe
 
 on:
   workflow_dispatch:
   schedule:
-    # 上午9点18和下午18点18执行
-    - cron: "18 1,10 * * *"
+    - cron: "45 15 * * *"
 
 jobs:
   build:
@@ -30,9 +29,9 @@ jobs:
 
       - name: "开始执行"
         run: |
-          node juejin.js
+          node sijishe.js
         env:
-          JUEJIN_COOKIE: ${{ secrets.JUEJIN_COOKIE }}
+          SJS_COOKIE: ${{ secrets.SJS_COOKIE }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
